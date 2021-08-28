@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		4216DD8F26D8758100CF2706 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4216DD8E26D8758100CF2706 /* AppDelegate.swift */; };
 		4216DD9126D8758100CF2706 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4216DD9026D8758100CF2706 /* SceneDelegate.swift */; };
-		4216DD9326D8758100CF2706 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4216DD9226D8758100CF2706 /* ViewController.swift */; };
+		4216DD9326D8758100CF2706 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4216DD9226D8758100CF2706 /* WelcomeViewController.swift */; };
 		4216DD9626D8758100CF2706 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4216DD9426D8758100CF2706 /* Main.storyboard */; };
 		4216DD9826D8758200CF2706 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4216DD9726D8758200CF2706 /* Assets.xcassets */; };
 		4216DD9B26D8758200CF2706 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4216DD9926D8758200CF2706 /* LaunchScreen.storyboard */; };
@@ -22,7 +22,7 @@
 		4216DD8B26D8758100CF2706 /* Dash Cam.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Dash Cam.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4216DD8E26D8758100CF2706 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4216DD9026D8758100CF2706 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		4216DD9226D8758100CF2706 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		4216DD9226D8758100CF2706 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		4216DD9526D8758100CF2706 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		4216DD9726D8758200CF2706 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4216DD9A26D8758200CF2706 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -43,6 +43,33 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		420C80D126DA39BC005B235F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		420C80D326DA39D0005B235F /* View */ = {
+			isa = PBXGroup;
+			children = (
+				4216DD9426D8758100CF2706 /* Main.storyboard */,
+				4216DD9926D8758200CF2706 /* LaunchScreen.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		420C80D426DA39D8005B235F /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				4216DDAA26D9C5A800CF2706 /* PulseAnimation.swift */,
+				4216DD9226D8758100CF2706 /* WelcomeViewController.swift */,
+				4216DDA426D8789400CF2706 /* CameraViewController.swift */,
+				4216DDA226D8776B00CF2706 /* PreviewView.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
 		4216DD8226D8758100CF2706 = {
 			isa = PBXGroup;
 			children = (
@@ -62,15 +89,12 @@
 		4216DD8D26D8758100CF2706 /* Dash Cam */ = {
 			isa = PBXGroup;
 			children = (
-				4216DDAA26D9C5A800CF2706 /* PulseAnimation.swift */,
+				420C80D426DA39D8005B235F /* Controller */,
+				420C80D326DA39D0005B235F /* View */,
+				420C80D126DA39BC005B235F /* Model */,
 				4216DD8E26D8758100CF2706 /* AppDelegate.swift */,
 				4216DD9026D8758100CF2706 /* SceneDelegate.swift */,
-				4216DD9226D8758100CF2706 /* ViewController.swift */,
-				4216DD9426D8758100CF2706 /* Main.storyboard */,
-				4216DDA426D8789400CF2706 /* CameraViewController.swift */,
-				4216DDA226D8776B00CF2706 /* PreviewView.swift */,
 				4216DD9726D8758200CF2706 /* Assets.xcassets */,
-				4216DD9926D8758200CF2706 /* LaunchScreen.storyboard */,
 				4216DD9C26D8758200CF2706 /* Info.plist */,
 			);
 			path = "Dash Cam";
@@ -146,7 +170,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4216DD9326D8758100CF2706 /* ViewController.swift in Sources */,
+				4216DD9326D8758100CF2706 /* WelcomeViewController.swift in Sources */,
 				4216DDA526D8789400CF2706 /* CameraViewController.swift in Sources */,
 				4216DDA326D8776B00CF2706 /* PreviewView.swift in Sources */,
 				4216DD8F26D8758100CF2706 /* AppDelegate.swift in Sources */,

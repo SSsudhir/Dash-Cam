@@ -1,6 +1,6 @@
 import UIKit
 
-class ViewController: UIViewController {
+class WelcomeViewController: UIViewController {
 
     @IBOutlet weak var openCameraButton: UIButton!
     @IBAction func openCamera(_ sender: Any) {

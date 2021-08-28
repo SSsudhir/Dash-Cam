@@ -1,6 +1,5 @@
 import UIKit
 
-
 class PulseAnimation: UIButton {
     let pulseLayer: CAShapeLayer = {
         let shape = CAShapeLayer()
