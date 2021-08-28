@@ -13,6 +13,9 @@
 		4216DD9626D8758100CF2706 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4216DD9426D8758100CF2706 /* Main.storyboard */; };
 		4216DD9826D8758200CF2706 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4216DD9726D8758200CF2706 /* Assets.xcassets */; };
 		4216DD9B26D8758200CF2706 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4216DD9926D8758200CF2706 /* LaunchScreen.storyboard */; };
+		4216DDA326D8776B00CF2706 /* PreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4216DDA226D8776B00CF2706 /* PreviewView.swift */; };
+		4216DDA526D8789400CF2706 /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4216DDA426D8789400CF2706 /* CameraViewController.swift */; };
+		4216DDAB26D9C5A800CF2706 /* PulseAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4216DDAA26D9C5A800CF2706 /* PulseAnimation.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +27,9 @@
 		4216DD9726D8758200CF2706 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4216DD9A26D8758200CF2706 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4216DD9C26D8758200CF2706 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4216DDA226D8776B00CF2706 /* PreviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewView.swift; sourceTree = "<group>"; };
+		4216DDA426D8789400CF2706 /* CameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
+		4216DDAA26D9C5A800CF2706 /* PulseAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PulseAnimation.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,10 +62,13 @@
 		4216DD8D26D8758100CF2706 /* Dash Cam */ = {
 			isa = PBXGroup;
 			children = (
+				4216DDAA26D9C5A800CF2706 /* PulseAnimation.swift */,
 				4216DD8E26D8758100CF2706 /* AppDelegate.swift */,
 				4216DD9026D8758100CF2706 /* SceneDelegate.swift */,
 				4216DD9226D8758100CF2706 /* ViewController.swift */,
 				4216DD9426D8758100CF2706 /* Main.storyboard */,
+				4216DDA426D8789400CF2706 /* CameraViewController.swift */,
+				4216DDA226D8776B00CF2706 /* PreviewView.swift */,
 				4216DD9726D8758200CF2706 /* Assets.xcassets */,
 				4216DD9926D8758200CF2706 /* LaunchScreen.storyboard */,
 				4216DD9C26D8758200CF2706 /* Info.plist */,
@@ -138,7 +147,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				4216DD9326D8758100CF2706 /* ViewController.swift in Sources */,
+				4216DDA526D8789400CF2706 /* CameraViewController.swift in Sources */,
+				4216DDA326D8776B00CF2706 /* PreviewView.swift in Sources */,
 				4216DD8F26D8758100CF2706 /* AppDelegate.swift in Sources */,
+				4216DDAB26D9C5A800CF2706 /* PulseAnimation.swift in Sources */,
 				4216DD9126D8758100CF2706 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -293,7 +305,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.sidharthsudhir.Dash-Cam";
+				PRODUCT_BUNDLE_IDENTIFIER = com.sidharthsudhir;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -312,7 +324,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.sidharthsudhir.Dash-Cam";
+				PRODUCT_BUNDLE_IDENTIFIER = com.sidharthsudhir;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

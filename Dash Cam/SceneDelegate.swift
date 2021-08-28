@@ -1,10 +1,3 @@
-//
-//  SceneDelegate.swift
-//  Dash Cam
-//
-//  Created by Sidharth Sudhir on 2021-08-26.
-//
-
 import UIKit
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
