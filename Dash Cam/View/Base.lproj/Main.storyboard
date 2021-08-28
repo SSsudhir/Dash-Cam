@@ -224,7 +224,7 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Dash Cam" id="rEa-ia-zJp">
-                        <barButtonItem key="backBarButtonItem" title="Exit" id="gej-8n-SlJ"/>
+                        <barButtonItem key="backBarButtonItem" title="Camera" id="gej-8n-SlJ"/>
                     </navigationItem>
                     <connections>
                         <outlet property="activityIndicator" destination="eV2-7Z-IM3" id="fNF-6e-6D8"/>

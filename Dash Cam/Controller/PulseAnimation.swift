@@ -7,6 +7,7 @@ class PulseAnimation: UIButton {
         shape.lineWidth = 10
         shape.fillColor = UIColor.white.withAlphaComponent(0.09).cgColor
         shape.lineCap = .round
+        
         return shape
     }()
     

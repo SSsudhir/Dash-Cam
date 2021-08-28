@@ -15,7 +15,6 @@ class WelcomeViewController: UIViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(viewDidBecomeActive), name: UIApplication.didBecomeActiveNotification, object: nil)
         
         button.center = self.view.center
-        print(button.center)
         view.addSubview(button)
         button.pulse()
         
@@ -36,6 +35,7 @@ class WelcomeViewController: UIViewController {
     }
     
     @objc func viewDidBecomeActive(){
+        button.center = self.view.center
         button.pulse()
     }
     
