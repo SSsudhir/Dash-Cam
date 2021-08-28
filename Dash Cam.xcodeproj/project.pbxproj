@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		420C80D626DACB04005B235F /* PulseAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 420C80D526DACB04005B235F /* PulseAnimation.swift */; };
 		4216DD8F26D8758100CF2706 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4216DD8E26D8758100CF2706 /* AppDelegate.swift */; };
 		4216DD9126D8758100CF2706 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4216DD9026D8758100CF2706 /* SceneDelegate.swift */; };
 		4216DD9326D8758100CF2706 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4216DD9226D8758100CF2706 /* WelcomeViewController.swift */; };
@@ -15,10 +16,11 @@
 		4216DD9B26D8758200CF2706 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4216DD9926D8758200CF2706 /* LaunchScreen.storyboard */; };
 		4216DDA326D8776B00CF2706 /* PreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4216DDA226D8776B00CF2706 /* PreviewView.swift */; };
 		4216DDA526D8789400CF2706 /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4216DDA426D8789400CF2706 /* CameraViewController.swift */; };
-		4216DDAB26D9C5A800CF2706 /* PulseAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4216DDAA26D9C5A800CF2706 /* PulseAnimation.swift */; };
+		4216DDAB26D9C5A800CF2706 /* RadarAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4216DDAA26D9C5A800CF2706 /* RadarAnimation.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		420C80D526DACB04005B235F /* PulseAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PulseAnimation.swift; sourceTree = "<group>"; };
 		4216DD8B26D8758100CF2706 /* Dash Cam.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Dash Cam.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4216DD8E26D8758100CF2706 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4216DD9026D8758100CF2706 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -29,7 +31,7 @@
 		4216DD9C26D8758200CF2706 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4216DDA226D8776B00CF2706 /* PreviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewView.swift; sourceTree = "<group>"; };
 		4216DDA426D8789400CF2706 /* CameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
-		4216DDAA26D9C5A800CF2706 /* PulseAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PulseAnimation.swift; sourceTree = "<group>"; };
+		4216DDAA26D9C5A800CF2706 /* RadarAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadarAnimation.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,10 +64,11 @@
 		420C80D426DA39D8005B235F /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				4216DDAA26D9C5A800CF2706 /* PulseAnimation.swift */,
+				4216DDAA26D9C5A800CF2706 /* RadarAnimation.swift */,
 				4216DD9226D8758100CF2706 /* WelcomeViewController.swift */,
 				4216DDA426D8789400CF2706 /* CameraViewController.swift */,
 				4216DDA226D8776B00CF2706 /* PreviewView.swift */,
+				420C80D526DACB04005B235F /* PulseAnimation.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -172,9 +175,10 @@
 			files = (
 				4216DD9326D8758100CF2706 /* WelcomeViewController.swift in Sources */,
 				4216DDA526D8789400CF2706 /* CameraViewController.swift in Sources */,
+				420C80D626DACB04005B235F /* PulseAnimation.swift in Sources */,
 				4216DDA326D8776B00CF2706 /* PreviewView.swift in Sources */,
 				4216DD8F26D8758100CF2706 /* AppDelegate.swift in Sources */,
-				4216DDAB26D9C5A800CF2706 /* PulseAnimation.swift in Sources */,
+				4216DDAB26D9C5A800CF2706 /* RadarAnimation.swift in Sources */,
 				4216DD9126D8758100CF2706 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

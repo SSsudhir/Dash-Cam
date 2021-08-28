@@ -7,7 +7,7 @@ class WelcomeViewController: UIViewController {
         UIImpactFeedbackGenerator(style: .light).impactOccurred()
     }
     
-    var button = PulseAnimation(frame: CGRect(x: 0, y: 0, width: 125, height: 125))
+    var button = RadarAnimation(frame: CGRect(x: 0, y: 0, width: 125, height: 125))
     
     override func viewDidLoad() {
         super.viewDidLoad()

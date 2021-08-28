@@ -17,6 +17,7 @@ class CameraViewController: UIViewController, AVCaptureFileOutputRecordingDelega
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     @IBOutlet weak var recordingStatus: UILabel!
     @IBOutlet weak var loadingMessage: UILabel!
+    @IBOutlet weak var recordingMessage: UILabel!
     
     
     var updateTimer: Timer!
@@ -53,10 +54,14 @@ class CameraViewController: UIViewController, AVCaptureFileOutputRecordingDelega
         recordButton.contentVerticalAlignment = .fill
         recordButton.contentHorizontalAlignment = .fill
         activityIndicator.hidesWhenStopped = true
+        recordingMessage.isHidden = true
+        recordingMessage.backgroundColor = UIColor.black.withAlphaComponent(0.4)
         
-        // Round corners of Recording Timer Label
+        // Round corners of Recording Timer and message Label
         recordingStatus.clipsToBounds = true
         recordingStatus.layer.cornerRadius = 5
+        recordingMessage.clipsToBounds = true
+        recordingMessage.layer.cornerRadius = 3
         
         previewView.session = session
         
@@ -349,20 +354,34 @@ class CameraViewController: UIViewController, AVCaptureFileOutputRecordingDelega
             } else {
                 movieFileOutput.stopRecording()
             }
+            
+            DispatchQueue.main.async {
+                let pulse = PulseAnimation(numberOfPulse: 1, radius: 500, postion: recordButton.center)
+                pulse.animationDuration = 2.0
+                pulse.backgroundColor = #colorLiteral(red: 1, green: 0.04556197673, blue: 0.09580480307, alpha: 1)
+                self.view.layer.insertSublayer(pulse, below: self.view.layer)
+            }
         }
     }
     
     func fileOutput(_ output: AVCaptureFileOutput, didStartRecordingTo fileURL: URL, from connections: [AVCaptureConnection]) {
         // Re-enable record button to allow the user to end recording and change button image from filled to outline
+        
         DispatchQueue.main.async {
             self.recordButton.isEnabled = true
             self.recordButton.setImage(UIImage(systemName: "record.circle"), for: [])
             self.recordingStatus.isHidden = false
+            self.recordingMessage.text = "Recording"
+            self.recordingMessage.isHidden = false
             
             // Timer to update the progress of video periodicially
             self.updateTimer = Timer.scheduledTimer(withTimeInterval: 0.25, repeats: true) { timer in
                 self.recordingStatus.text = self.getRecordingTime()
             }
+        }
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+            self.recordingMessage.isHidden = true
         }
     }
     
@@ -441,6 +460,12 @@ class CameraViewController: UIViewController, AVCaptureFileOutputRecordingDelega
             self.recordButton.setImage(UIImage(systemName: "circlebadge"), for: [])
             self.updateTimer.invalidate()
             self.recordingStatus.isHidden = true
+            self.recordingMessage.text = "Ended"
+            self.recordingMessage.isHidden = false
+        }
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+            self.recordingMessage.isHidden = true
         }
     }
     

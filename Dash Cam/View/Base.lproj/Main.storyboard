@@ -152,6 +152,17 @@
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Recording" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3jU-tz-1nu">
+                                        <rect key="frame" x="125" y="402" width="140" height="40"/>
+                                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="BR7-Ak-9Ck"/>
+                                            <constraint firstAttribute="width" constant="140" id="GbE-OZ-bqk"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="21"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
@@ -160,6 +171,7 @@
                                     <constraint firstItem="hYH-Ji-eCb" firstAttribute="top" secondItem="jgF-dm-Lud" secondAttribute="top" constant="100" id="6qO-GZ-QB9"/>
                                     <constraint firstItem="LBk-xs-41b" firstAttribute="centerX" secondItem="jgF-dm-Lud" secondAttribute="centerX" id="C2W-gr-jUj"/>
                                     <constraint firstItem="eV2-7Z-IM3" firstAttribute="centerY" secondItem="jgF-dm-Lud" secondAttribute="centerY" id="Os8-IO-jEq"/>
+                                    <constraint firstItem="3jU-tz-1nu" firstAttribute="centerX" secondItem="jgF-dm-Lud" secondAttribute="centerX" id="RZC-rk-a79"/>
                                     <constraint firstAttribute="trailing" secondItem="Erq-HG-MkG" secondAttribute="trailing" constant="45" id="SuR-ci-m9U"/>
                                     <constraint firstItem="hYH-Ji-eCb" firstAttribute="top" secondItem="jgF-dm-Lud" secondAttribute="top" constant="80" id="TAF-SR-Rec"/>
                                     <constraint firstItem="Erq-HG-MkG" firstAttribute="centerX" secondItem="jgF-dm-Lud" secondAttribute="centerX" id="XrW-tH-Dht"/>
@@ -170,6 +182,7 @@
                                     <constraint firstItem="eV2-7Z-IM3" firstAttribute="centerX" secondItem="jgF-dm-Lud" secondAttribute="centerX" id="nez-io-HZJ"/>
                                     <constraint firstAttribute="trailing" secondItem="Erq-HG-MkG" secondAttribute="trailing" constant="30" id="s43-4e-w93"/>
                                     <constraint firstItem="hYH-Ji-eCb" firstAttribute="centerX" secondItem="jgF-dm-Lud" secondAttribute="centerX" id="vmd-mt-u8l"/>
+                                    <constraint firstItem="3jU-tz-1nu" firstAttribute="centerY" secondItem="jgF-dm-Lud" secondAttribute="centerY" id="vps-PP-9gF"/>
                                     <constraint firstItem="hYH-Ji-eCb" firstAttribute="centerX" secondItem="jgF-dm-Lud" secondAttribute="centerX" id="xOY-Ir-zwL"/>
                                 </constraints>
                                 <variation key="default">
@@ -231,6 +244,7 @@
                         <outlet property="loadingMessage" destination="LBk-xs-41b" id="4Wa-nZ-no3"/>
                         <outlet property="previewView" destination="jgF-dm-Lud" id="HAN-Md-n3f"/>
                         <outlet property="recordButton" destination="Erq-HG-MkG" id="Ovs-dZ-RY4"/>
+                        <outlet property="recordingMessage" destination="3jU-tz-1nu" id="eKL-a8-jFZ"/>
                         <outlet property="recordingStatus" destination="hYH-Ji-eCb" id="hYh-c3-lXV"/>
                     </connections>
                 </viewController>

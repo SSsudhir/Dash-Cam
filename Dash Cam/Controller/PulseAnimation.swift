@@ -1,53 +1,63 @@
 import UIKit
 
-class PulseAnimation: UIButton {
-    let pulseLayer: CAShapeLayer = {
-        let shape = CAShapeLayer()
-        shape.strokeColor = UIColor.white.withAlphaComponent(0.09).cgColor
-        shape.lineWidth = 10
-        shape.fillColor = UIColor.white.withAlphaComponent(0.09).cgColor
-        shape.lineCap = .round
-        
-        return shape
-    }()
+class PulseAnimation: CALayer {
+
+    var animationGroup = CAAnimationGroup()
+    var animationDuration: TimeInterval = 1.5
+    var radius: CGFloat = 200
+    var numebrOfPulse: Float = Float.infinity
     
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        setupShapes()
+    override init(layer: Any) {
+        super.init(layer: layer)
     }
     
     required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-        setupShapes()
+        fatalError("init(coder:) has not been implemented")
     }
     
-    fileprivate func setupShapes() {
-        setNeedsLayout()
-        layoutIfNeeded()
+    init(numberOfPulse: Float = Float.infinity, radius: CGFloat, postion: CGPoint){
+        super.init()
+        self.backgroundColor = UIColor.black.cgColor
+        self.contentsScale = UIScreen.main.scale
+        self.opacity = 0
+        self.radius = radius
+        self.numebrOfPulse = numberOfPulse
+        self.position = postion
         
-        let backgroundLayer = CAShapeLayer()
+        self.bounds = CGRect(x: 0, y: 0, width: radius*2, height: radius*2)
+        self.cornerRadius = radius
         
-        let circularPath = UIBezierPath(arcCenter: self.center, radius: bounds.size.height/2, startAngle: 0, endAngle: 2 * CGFloat.pi, clockwise: true)
-        
-        pulseLayer.frame = bounds
-        pulseLayer.path = circularPath.cgPath
-        pulseLayer.position = self.center
-        self.layer.addSublayer(pulseLayer)
-        
-        backgroundLayer.path = circularPath.cgPath
-        backgroundLayer.lineWidth = 0
-        backgroundLayer.fillColor = UIColor.clear.cgColor
-        backgroundLayer.lineCap = .round
-        self.layer.addSublayer(backgroundLayer)
+        DispatchQueue.global(qos: .default).async {
+            self.setupAnimationGroup()
+            DispatchQueue.main.async {
+                self.add(self.animationGroup, forKey: "pulse")
+           }
+        }
     }
     
-    func pulse() {
-        let animation = CABasicAnimation(keyPath: "transform.scale")
-        animation.toValue = 1.5
-        animation.duration = 2.0
-        animation.timingFunction = CAMediaTimingFunction(name: .easeOut)
-        animation.autoreverses = true
-        animation.repeatCount = .infinity
-        pulseLayer.add(animation, forKey: "pulsing")
+    func scaleAnimation() -> CABasicAnimation {
+        let scaleAnimaton = CABasicAnimation(keyPath: "transform.scale.xy")
+        scaleAnimaton.fromValue = NSNumber(value: 0)
+        scaleAnimaton.toValue = NSNumber(value: 1)
+        scaleAnimaton.duration = animationDuration
+        return scaleAnimaton
     }
+    
+    func createOpacityAnimation() -> CAKeyframeAnimation {
+        let opacityAnimiation = CAKeyframeAnimation(keyPath: "opacity")
+        opacityAnimiation.duration = animationDuration
+        opacityAnimiation.values = [0.4,0.8,0]
+        opacityAnimiation.keyTimes = [0,0.3,1]
+        return opacityAnimiation
+    }
+    
+    func setupAnimationGroup() {
+        self.animationGroup.duration = animationDuration
+        self.animationGroup.repeatCount = numebrOfPulse
+        let defaultCurve = CAMediaTimingFunction(name: CAMediaTimingFunctionName.default)
+        self.animationGroup.timingFunction = defaultCurve
+        self.animationGroup.animations = [scaleAnimation(),createOpacityAnimation()]
+    }
+    
+    
 }
