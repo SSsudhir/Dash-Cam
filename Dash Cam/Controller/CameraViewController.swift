@@ -44,6 +44,8 @@ class CameraViewController: UIViewController, AVCaptureFileOutputRecordingDelega
     
     @objc dynamic var videoDeviceInput: AVCaptureDeviceInput!
     
+    let defaultBrightNess = UIScreen.main.brightness
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -164,7 +166,7 @@ class CameraViewController: UIViewController, AVCaptureFileOutputRecordingDelega
                 self.isSessionRunning = self.session.isRunning
             }
         }
-        
+        UIScreen.main.brightness = CGFloat(defaultBrightNess)
         super.viewWillDisappear(animated)
     }
     
@@ -280,10 +282,12 @@ class CameraViewController: UIViewController, AVCaptureFileOutputRecordingDelega
             // Set different values of video recording
             self.session.beginConfiguration()
             self.session.addOutput(movieFileOutput)
-            self.session.sessionPreset = .high
-//                self.session.sessionPreset = .low
-//                self.session.sessionPreset = .hd1280x720
-//                self.session.session Preset = .medium
+//            self.session.sessionPreset = .high
+//            self.session.sessionPreset = .medium
+//            self.session.sessionPreset = .low
+//            self.session.sessionPreset = .hd1920x1080
+//            self.session.sessionPreset = .hd4K3840x2160
+            self.session.sessionPreset = .hd1280x720
             
 
             self.selectedMovieMode10BitDeviceFormat = self.tenBitVariantOfFormat(activeFormat: self.videoDeviceInput.device.activeFormat)
@@ -382,6 +386,7 @@ class CameraViewController: UIViewController, AVCaptureFileOutputRecordingDelega
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
             self.recordingMessage.isHidden = true
+            UIScreen.main.brightness = 0
         }
     }
     
@@ -423,7 +428,7 @@ class CameraViewController: UIViewController, AVCaptureFileOutputRecordingDelega
         
         if error != nil {
             print("Movie file finishing error: \(String(describing: error))")
-            success = (((error! as NSError).userInfo[AVErrorRecordingSuccessfullyFinishedKey] as AnyObject).boolValue)!
+            success = (((((error! as NSError).userInfo[AVErrorRecordingSuccessfullyFinishedKey] as AnyObject).boolValue)))
         }
         
         if success {
@@ -460,8 +465,10 @@ class CameraViewController: UIViewController, AVCaptureFileOutputRecordingDelega
             self.recordButton.setImage(UIImage(systemName: "circlebadge"), for: [])
             self.updateTimer.invalidate()
             self.recordingStatus.isHidden = true
-            self.recordingMessage.text = "Ended"
+            self.recordingMessage.text = "Stopped"
             self.recordingMessage.isHidden = false
+            UIScreen.main.brightness = CGFloat(self.defaultBrightNess)
+            
         }
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 2) {

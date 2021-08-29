@@ -64,11 +64,11 @@
 		420C80D426DA39D8005B235F /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				4216DDAA26D9C5A800CF2706 /* RadarAnimation.swift */,
 				4216DD9226D8758100CF2706 /* WelcomeViewController.swift */,
 				4216DDA426D8789400CF2706 /* CameraViewController.swift */,
 				4216DDA226D8776B00CF2706 /* PreviewView.swift */,
 				420C80D526DACB04005B235F /* PulseAnimation.swift */,
+				4216DDAA26D9C5A800CF2706 /* RadarAnimation.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";

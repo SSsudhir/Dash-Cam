@@ -4,7 +4,7 @@ class RadarAnimation: UIButton {
     let pulseLayer: CAShapeLayer = {
         let shape = CAShapeLayer()
         shape.strokeColor = UIColor.white.withAlphaComponent(0.09).cgColor
-        shape.lineWidth = 10
+        shape.lineWidth = 2
         shape.fillColor = UIColor.white.withAlphaComponent(0.09).cgColor
         shape.lineCap = .round
         
@@ -45,7 +45,7 @@ class RadarAnimation: UIButton {
         let animation = CABasicAnimation(keyPath: "transform.scale")
         animation.toValue = 1.5
         animation.duration = 2.0
-        animation.timingFunction = CAMediaTimingFunction(name: .easeOut)
+        animation.timingFunction = CAMediaTimingFunction(name: .easeInEaseOut)
         animation.autoreverses = true
         animation.repeatCount = .infinity
         pulseLayer.add(animation, forKey: "pulsing")
