@@ -44,7 +44,7 @@ class CameraViewController: UIViewController, AVCaptureFileOutputRecordingDelega
     
     @objc dynamic var videoDeviceInput: AVCaptureDeviceInput!
     
-    let defaultBrightNess = UIScreen.main.brightness
+    var defaultBrightNess = UIScreen.main.brightness
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -194,6 +194,24 @@ class CameraViewController: UIViewController, AVCaptureFileOutputRecordingDelega
             }
             
             videoPreviewLayerConnection.videoOrientation = newVideoOrientation
+        }
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        if let recordingFile = self.movieFileOutput?.isRecording {
+            if recordingFile {
+                UIScreen.main.brightness = CGFloat(self.defaultBrightNess)
+            }
+        }
+    }
+    
+    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
+            if let recordingFile = self.movieFileOutput?.isRecording {
+                if recordingFile {
+                    UIScreen.main.brightness = 0
+                }
+            }
         }
     }
     
@@ -384,8 +402,10 @@ class CameraViewController: UIViewController, AVCaptureFileOutputRecordingDelega
             }
         }
         
-        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
             self.recordingMessage.isHidden = true
+            
+            self.defaultBrightNess = UIScreen.main.brightness
             UIScreen.main.brightness = 0
         }
     }
@@ -467,6 +487,7 @@ class CameraViewController: UIViewController, AVCaptureFileOutputRecordingDelega
             self.recordingStatus.isHidden = true
             self.recordingMessage.text = "Stopped"
             self.recordingMessage.isHidden = false
+            
             UIScreen.main.brightness = CGFloat(self.defaultBrightNess)
             
         }
