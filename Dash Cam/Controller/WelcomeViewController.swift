@@ -8,6 +8,8 @@ class WelcomeViewController: UIViewController {
     @IBOutlet weak var cameraSelector: UISegmentedControl!
     @IBOutlet weak var resoutionSelector: UISegmentedControl!
     @IBOutlet weak var dashCamLabel: UIImageView!
+    @IBOutlet weak var cameraLabel: UILabel!
+    @IBOutlet weak var qualityLabel: UILabel!
     
     @IBAction func openCamera(_ sender: Any) {
         UIImpactFeedbackGenerator(style: .light).impactOccurred()
@@ -66,11 +68,15 @@ class WelcomeViewController: UIViewController {
             self.cameraSelector.isHidden = true
             self.resoutionSelector.isHidden = true
             self.dashCamLabel.isHidden = true
+            self.cameraLabel.isHidden = true
+            self.qualityLabel.isHidden = true
         }, completion: { (UIViewControllerTransitionCoordinatorContext) -> Void in
                 if UIApplication.shared.windows.first?.windowScene?.interfaceOrientation.isPortrait ?? true {
                     self.cameraSelector.isHidden = false
                     self.resoutionSelector.isHidden = false
                     self.dashCamLabel.isHidden = false
+                    self.cameraLabel.isHidden = false
+                    self.qualityLabel.isHidden = false
                 }
             
                 self.button.center = self.view.center
@@ -82,17 +88,17 @@ class WelcomeViewController: UIViewController {
     
     
     @IBAction func hdrVideoPressed(_ sender: Any) {
-        if hdrVideoButton.backgroundColor == #colorLiteral(red: 0.6427945495, green: 0, blue: 0.002547488548, alpha: 1) {
+        if hdrVideoButton.backgroundColor == #colorLiteral(red: 0.9529411793, green: 0.6862745285, blue: 0.1333333403, alpha: 1) {
             hdrVideoButton.backgroundColor = #colorLiteral(red: 0.2605174184, green: 0.2605243921, blue: 0.260520637, alpha: 1)
         } else {
-            hdrVideoButton.backgroundColor = #colorLiteral(red: 0.6427945495, green: 0, blue: 0.002547488548, alpha: 1)
+            hdrVideoButton.backgroundColor = #colorLiteral(red: 0.9529411793, green: 0.6862745285, blue: 0.1333333403, alpha: 1)
         }
     }
     @IBAction func autoDimPressed(_ sender: Any) {
-        if autoDimButton.backgroundColor == #colorLiteral(red: 0.6427945495, green: 0, blue: 0.002547488548, alpha: 1) {
+        if autoDimButton.backgroundColor == #colorLiteral(red: 0.9529411793, green: 0.6862745285, blue: 0.1333333403, alpha: 1) {
             autoDimButton.backgroundColor = #colorLiteral(red: 0.2605174184, green: 0.2605243921, blue: 0.260520637, alpha: 1)
         } else {
-            autoDimButton.backgroundColor = #colorLiteral(red: 0.6427945495, green: 0, blue: 0.002547488548, alpha: 1)
+            autoDimButton.backgroundColor = #colorLiteral(red: 0.9529411793, green: 0.6862745285, blue: 0.1333333403, alpha: 1)
         }
     }
     @IBAction func cameraSelectorToggle(_ sender: Any) {
