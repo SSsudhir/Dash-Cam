@@ -3,6 +3,7 @@
     <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -25,27 +26,114 @@
                                 <state key="normal" image="OpenDashCamButton"/>
                                 <connections>
                                     <action selector="openCamera:" destination="BYZ-38-t0r" eventType="touchUpInside" id="AxS-xq-1FA"/>
-                                    <segue destination="zcD-TG-Lyd" kind="show" id="QbX-5l-69E"/>
+                                    <segue destination="zcD-TG-Lyd" kind="show" id="hQI-jO-vbx"/>
                                 </connections>
                             </button>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="7eQ-Qq-9Vk">
+                                <rect key="frame" x="57.666666666666657" y="727" width="275" height="32"/>
+                                <color key="backgroundColor" red="0.58780473470000005" green="0.58771270509999995" blue="0.6072557569" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="275" id="2Pc-aR-Gza"/>
+                                </constraints>
+                                <segments>
+                                    <segment title="Ultra Low"/>
+                                    <segment title="720p"/>
+                                    <segment title="1080p"/>
+                                    <segment title="2160p"/>
+                                </segments>
+                                <color key="selectedSegmentTintColor" red="0.80300694699999997" green="0.80305701490000003" blue="0.81030517820000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <action selector="resolutionSelectorToggle:" destination="BYZ-38-t0r" eventType="valueChanged" id="lX1-4m-xLY"/>
+                                </connections>
+                            </segmentedControl>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="3Q7-1V-8O2">
+                                <rect key="frame" x="57.666666666666657" y="636" width="275" height="32"/>
+                                <color key="backgroundColor" red="0.58780473470000005" green="0.58771270509999995" blue="0.6072557569" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="275" id="T9i-ZK-eW6"/>
+                                </constraints>
+                                <segments>
+                                    <segment title="Wide Angle"/>
+                                    <segment title="Normal"/>
+                                    <segment title="Front"/>
+                                </segments>
+                                <color key="selectedSegmentTintColor" red="0.82770937680000001" green="0.82776319980000002" blue="0.83496081830000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <action selector="cameraSelectorToggle:" destination="BYZ-38-t0r" eventType="valueChanged" id="tzn-pk-qmj"/>
+                                </connections>
+                            </segmentedControl>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OTV-t9-WtO">
+                                <rect key="frame" x="45" y="533" width="87" height="43"/>
+                                <color key="backgroundColor" red="0.26051741839999998" green="0.2605243921" blue="0.260520637" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="87" id="feb-aO-jo3"/>
+                                    <constraint firstAttribute="height" constant="43" id="nFF-fc-9z3"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="HDR Mode">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="titleShadowColor" name="AccentColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="hdrVideoPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="7a0-pH-k5U"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aOH-2U-evn">
+                                <rect key="frame" x="258" y="533" width="87" height="43"/>
+                                <color key="backgroundColor" red="0.26051741839999998" green="0.2605243921" blue="0.260520637" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="87" id="Vs6-0X-niy"/>
+                                    <constraint firstAttribute="height" constant="43" id="r7o-Cc-BCM"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Auto-Dim">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="autoDimPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="YdF-WL-dIz"/>
+                                </connections>
+                            </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Dash Cam Label" translatesAutoresizingMaskIntoConstraints="NO" id="T1S-7j-QQV">
+                                <rect key="frame" x="60" y="168" width="270" height="128"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="128" id="Rq4-ZP-A8Y"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
+                            <constraint firstItem="OTV-t9-WtO" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="45" id="4C3-YP-eIz"/>
+                            <constraint firstItem="3Q7-1V-8O2" firstAttribute="top" secondItem="OTV-t9-WtO" secondAttribute="bottom" constant="60" id="BnT-SG-Mtd"/>
+                            <constraint firstItem="7eQ-Qq-9Vk" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="E88-ug-vVX"/>
                             <constraint firstItem="oSG-lB-VfK" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="T64-Em-2nT"/>
-                            <constraint firstItem="oSG-lB-VfK" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="trw-Hj-daT"/>
+                            <constraint firstItem="T1S-7j-QQV" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="60" id="Thr-2W-zxA"/>
+                            <constraint firstItem="3Q7-1V-8O2" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="XoP-kz-325"/>
+                            <constraint firstItem="T1S-7j-QQV" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="80" id="aJm-9I-TeL"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="aOH-2U-evn" secondAttribute="trailing" constant="45" id="hKb-xc-dZb"/>
+                            <constraint firstAttribute="trailing" secondItem="T1S-7j-QQV" secondAttribute="trailing" constant="60" id="hd6-eH-Odh"/>
+                            <constraint firstItem="T1S-7j-QQV" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="hiC-h8-zYy"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="7eQ-Qq-9Vk" secondAttribute="bottom" constant="52" id="kYZ-VB-8HF"/>
+                            <constraint firstItem="oSG-lB-VfK" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="q96-Sq-wa7"/>
+                            <constraint firstItem="7eQ-Qq-9Vk" firstAttribute="top" secondItem="3Q7-1V-8O2" secondAttribute="bottom" constant="60" id="uuc-Me-JYa"/>
+                            <constraint firstItem="3Q7-1V-8O2" firstAttribute="top" secondItem="aOH-2U-evn" secondAttribute="bottom" constant="60" id="wJP-qV-FHH"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="MSd-8W-26x">
                         <barButtonItem key="backBarButtonItem" title="Exit" id="HjZ-3t-hur"/>
                     </navigationItem>
                     <connections>
-                        <outlet property="openCameraButton" destination="oSG-lB-VfK" id="OJz-ZK-Yb9"/>
+                        <outlet property="autoDimButton" destination="aOH-2U-evn" id="UyT-qn-IKV"/>
+                        <outlet property="cameraSelector" destination="3Q7-1V-8O2" id="ke2-bU-pu5"/>
+                        <outlet property="dashCamLabel" destination="T1S-7j-QQV" id="y9o-HN-2rH"/>
+                        <outlet property="hdrVideoButton" destination="OTV-t9-WtO" id="sA0-UO-z78"/>
+                        <outlet property="openCameraButton" destination="OTV-t9-WtO" id="dbr-NZ-8b2"/>
+                        <outlet property="resoutionSelector" destination="7eQ-Qq-9Vk" id="VKJ-pw-Hs5"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="937.68115942028987" y="93.75"/>
+            <point key="canvasLocation" x="936.92307692307691" y="93.127962085308056"/>
         </scene>
         <!--Camera View Controller-->
         <scene sceneID="ItN-7n-Y6r">
@@ -255,7 +343,6 @@
         <!--Navigation Controller-->
         <scene sceneID="bkF-kG-PHt">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="smD-71-GHN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="1cC-WA-78b" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="MQa-Nj-Lio">
@@ -272,13 +359,18 @@
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="WEo-3D-egJ"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="smD-71-GHN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="27.536231884057973" y="93.75"/>
         </scene>
     </scenes>
     <resources>
+        <image name="Dash Cam Label" width="1778" height="862"/>
         <image name="OpenDashCamButton" width="258" height="258"/>
         <image name="circlebadge" catalog="system" width="128" height="120"/>
+        <namedColor name="AccentColor">
+            <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

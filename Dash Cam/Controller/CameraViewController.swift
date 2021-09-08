@@ -380,7 +380,7 @@ class CameraViewController: UIViewController, AVCaptureFileOutputRecordingDelega
             DispatchQueue.main.async {
                 let pulse = PulseAnimation(numberOfPulse: 1, radius: 500, postion: recordButton.center)
                 pulse.animationDuration = 2.0
-                pulse.backgroundColor = #colorLiteral(red: 1, green: 0.04556197673, blue: 0.09580480307, alpha: 1)
+                pulse.backgroundColor = #colorLiteral(red: 0.7450980544, green: 0.1568627506, blue: 0.07450980693, alpha: 1)
                 self.view.layer.insertSublayer(pulse, below: self.view.layer)
             }
         }
@@ -448,7 +448,7 @@ class CameraViewController: UIViewController, AVCaptureFileOutputRecordingDelega
         
         if error != nil {
             print("Movie file finishing error: \(String(describing: error))")
-            success = (((((error! as NSError).userInfo[AVErrorRecordingSuccessfullyFinishedKey] as AnyObject).boolValue)))
+//            success = (((((error! as NSError).userInfo[AVErrorRecordingSuccessfullyFinishedKey] as AnyObject).boolValue)))
         }
         
         if success {
