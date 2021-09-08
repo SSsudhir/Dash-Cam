@@ -3,4 +3,4 @@
 ## Test
 Testing gif playback
 ## Demo
-![demo-vid](resources/dashCamWelcomePage.gif)
+![demo-vid](resources/dashCamWelcomePageDemo.gif)
