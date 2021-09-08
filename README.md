@@ -1,6 +1,6 @@
 # Dash-Cam
 
-Dash Cam is an iOS Application that allows users to record car & bike trips using just their iPhone. Great for short commutes in and out of busy cities where small bumper-to-bumper accidents are most common, but often hardest to prove without video evidence. Dash Cam aims to solve this issue by allowing customers to use their iPhones as Dash Cams, rather than forking over 100's of dollars for a camera that can only record video a fraction of the quality an iPhone can. Dash Cam also offers features that many of the competitors cannot, such as background audio pass through which enables users to continue listening to their music/podcasts/phone calls whilst recording. The app also supports the Wide Angle Camera on newer iPhone models allowing for a larger view to be captured. These features and many more mentioned below make Dash Cam one of the best transportation recording devices for iPhone.
+Dash Cam is an iOS Application built on `AVFoundation` that allows users to record car & bike trips using just their iPhone. Great for short commutes in and out of busy cities where small bumper-to-bumper accidents are most common, but often hardest to prove without video evidence. Dash Cam aims to solve this issue by allowing customers to use their iPhones as Dash Cams, rather than forking over 100's of dollars for a camera that can only record video a fraction of the quality an iPhone can. Dash Cam also offers features that many of the competitors cannot, such as background audio pass through which enables users to continue listening to their music/podcasts/phone calls whilst recording. The app also supports the Wide Angle Camera on newer iPhone models allowing for a larger view to be captured. These features and many more mentioned below make Dash Cam one of the best transportation recording devices for iPhone.
 
 ## Features
 
@@ -15,6 +15,6 @@ Dash Cam is an iOS Application that allows users to record car & bike trips usin
 
 ## Demo
 
-![demo-vid](resources/dashCamWelcomePageDemo.gif)
+![demo-vid](resources/dashCamWelcomePageDemo.gif)![demo-vid](resources/dashCamWelcomePageDemo.gif)
 
 ## To Do
