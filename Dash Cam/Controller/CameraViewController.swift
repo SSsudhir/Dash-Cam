@@ -303,9 +303,9 @@ class CameraViewController: UIViewController, AVCaptureFileOutputRecordingDelega
 //            self.session.sessionPreset = .high
 //            self.session.sessionPreset = .medium
 //            self.session.sessionPreset = .low
-//            self.session.sessionPreset = .hd1920x1080
+            self.session.sessionPreset = .hd1920x1080
 //            self.session.sessionPreset = .hd4K3840x2160
-            self.session.sessionPreset = .hd1280x720
+//            self.session.sessionPreset = .hd1280x720
             
 
             self.selectedMovieMode10BitDeviceFormat = self.tenBitVariantOfFormat(activeFormat: self.videoDeviceInput.device.activeFormat)
@@ -448,7 +448,7 @@ class CameraViewController: UIViewController, AVCaptureFileOutputRecordingDelega
         
         if error != nil {
             print("Movie file finishing error: \(String(describing: error))")
-//            success = (((((error! as NSError).userInfo[AVErrorRecordingSuccessfullyFinishedKey] as AnyObject).boolValue)))
+            success = (((((error! as NSError).userInfo[AVErrorRecordingSuccessfullyFinishedKey] as AnyObject).boolValue)))
         }
         
         if success {
