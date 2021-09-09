@@ -27,10 +27,10 @@ class WelcomeViewController: UIViewController {
         button.pulse()
         
         hdrVideoButton.clipsToBounds = true
-        hdrVideoButton.layer.cornerRadius = 7.5
+        hdrVideoButton.layer.cornerRadius = 6.5
         
         autoDimButton.clipsToBounds = true
-        autoDimButton.layer.cornerRadius = 7.5
+        autoDimButton.layer.cornerRadius = 6.5
         
         cameraSelector.setTitleColor(#colorLiteral(red: 0, green: 0, blue: 0, alpha: 1))
         resoutionSelector.setTitleColor(#colorLiteral(red: 0, green: 0, blue: 0, alpha: 1))
