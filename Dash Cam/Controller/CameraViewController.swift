@@ -33,7 +33,7 @@ class CameraViewController: UIViewController, AVCaptureFileOutputRecordingDelega
         case off
     }
     
-    private var HDRVideoMode: HDRVideoMode = .off
+    private var HDRVideoMode: HDRVideoMode = .on
     private let session = AVCaptureSession()
     private var isSessionRunning = false
     private let sessionQueue = DispatchQueue(label: "session queue")
