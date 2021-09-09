@@ -18,18 +18,18 @@ Dash Cam is an iOS Application built using `AVFoundation` that allows users to r
 
 ## Demo
 
-> Customize video resolution, camera selection, HDR Mode and Auto-Dim display settings all from the home screen
+- Customize video resolution, camera selection, HDR Mode and Auto-Dim display settings all from the home screen
 ![demo-vid](resources/dashCamVideoResolutionDemo.gif) ![demo-vid](resources/dashCamCameraSelectionDemo.gif) ![demo-vid](resources/dashCamHDRModeDemo.gif) ![demo-vid](resources/dashCamAutoDimDemo.gif)
 
-> Capture videos easily with the click of a button
+- Capture videos easily with the click of a button
 ![demo-vid](resources/video1screenRecording.gif) ![demo-vid](resources/video1actualVideo.gif)
 ![demo-vid](resources/video2screenRecording.gif) ![demo-vid](resources/video2actualVideo.gif)
 ![demo-vid](resources/video3screenRecording.gif) ![demo-vid](resources/video3actualVideo.gif)
 
-> Auto-Dim Display reduces screen brightness to 0 until user either taps the screen or ends recording
+- Auto-Dim Display reduces screen brightness to 0 until user either taps the screen or ends recording
 ![demo-vid](resources/dashCamCameraSelectionDemo.gif)
 
-> 
+- 
 
 ## To Do
 
