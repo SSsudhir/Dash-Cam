@@ -18,7 +18,8 @@ class CameraViewController: UIViewController, AVCaptureFileOutputRecordingDelega
     @IBOutlet weak var recordingStatus: UILabel!
     @IBOutlet weak var loadingMessage: UILabel!
     @IBOutlet weak var recordingMessage: UILabel!
-    
+    @IBOutlet weak var takePictureButton: UIButton!
+
     
     var updateTimer: Timer!
     
@@ -41,6 +42,8 @@ class CameraViewController: UIViewController, AVCaptureFileOutputRecordingDelega
     private var movieFileOutput: AVCaptureMovieFileOutput?
     private var backgroundRecordingID: UIBackgroundTaskIdentifier?
     private var selectedMovieMode10BitDeviceFormat: AVCaptureDevice.Format?
+    // Take Picture
+    private let photoOutput = AVCapturePhotoOutput()
     
     @objc dynamic var videoDeviceInput: AVCaptureDeviceInput!
     
@@ -330,6 +333,15 @@ class CameraViewController: UIViewController, AVCaptureFileOutputRecordingDelega
                 }
             }
             
+            // Add photo output
+            if session.canAddOutput(photoOutput) {
+                session.addOutput(photoOutput)
+                photoOutput.isHighResolutionCaptureEnabled = true
+            } else {
+                print("Could not add photo output to the session")
+                setupResult = .configurationFailed
+            }
+            
             self.session.commitConfiguration()
             
             self.movieFileOutput = movieFileOutput
@@ -340,6 +352,23 @@ class CameraViewController: UIViewController, AVCaptureFileOutputRecordingDelega
                 self.recordButton.isEnabled = true
             }
         }
+    }
+    
+    @IBAction func takePicture(_ sender: UIButton) {
+        guard let photoOutputConnection = photoOutput.connection(with: .video) else {
+            print("Photo output connection unavailable")
+            return
+        }
+        
+        // Set orientation
+        photoOutputConnection.videoOrientation = previewView.videoPreviewLayer.connection?.videoOrientation ?? .portrait
+        
+        // Set photo settings
+        let photoSettings = AVCapturePhotoSettings()
+        photoSettings.isHighResolutionPhotoEnabled = true
+        
+        // Capture the photo
+        photoOutput.capturePhoto(with: photoSettings, delegate: self)
     }
     
     
@@ -586,6 +615,40 @@ extension AVCaptureVideoOrientation {
         case .landscapeLeft: self = .landscapeLeft
         case .landscapeRight: self = .landscapeRight
         default: return nil
+        }
+    }
+}
+
+
+// MARK: AVCapturePhotoCaptureDelegate
+extension CameraViewController: AVCapturePhotoCaptureDelegate {
+    func photoOutput(_ output: AVCapturePhotoOutput, didFinishProcessingPhoto photo: AVCapturePhoto, error: Error?) {
+        if let error = error {
+            print("Error capturing photo: \(error)")
+            return
+        }
+        
+        guard let imageData = photo.fileDataRepresentation() else {
+            print("No image data representation")
+            return
+        }
+        
+        // Save image to photo library
+        PHPhotoLibrary.requestAuthorization { status in
+            if status == .authorized {
+                PHPhotoLibrary.shared().performChanges({
+                    let options = PHAssetResourceCreationOptions()
+                    options.shouldMoveFile = true
+                    let creationRequest = PHAssetCreationRequest.forAsset()
+                    creationRequest.addResource(with: .photo, data: imageData, options: options)
+                }) { success, error in
+                    if success {
+                        print("Photo saved successfully")
+                    } else {
+                        print("Error saving photo: \(String(describing: error))")
+                    }
+                }
+            }
         }
     }
 }
